@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #faf9f5;
+  --surface: #ffffff;
+  --surface-elevated: #ffffff;
+  --foreground: #0a0a0a;
+  --muted: #6b6b66;
+  --subtle: #9a9a93;
+  --hairline: #ebe9e1;
+  --hairline-strong: #d8d6cc;
+  --accent: #0a0a0a;
+  --accent-foreground: #faf9f5;
+  --mint: #7be3a7;
+  --mint-ink: #0c2a1a;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --surface: #121212;
+  --surface-elevated: #171717;
+  --foreground: #f2f0ea;
+  --muted: #8c8c85;
+  --subtle: #5a5a55;
+  --hairline: #232323;
+  --hairline-strong: #2f2f2f;
+  --accent: #f2f0ea;
+  --accent-foreground: #0a0a0a;
+  --mint: #6fd99a;
+  --mint-ink: #082414;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-hairline: var(--hairline);
+  --color-hairline-strong: var(--hairline-strong);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-mint: var(--mint);
+  --color-mint-ink: var(--mint-ink);
+
+  --font-sans: var(--font-sans-base);
+  --font-display: var(--font-display-base);
+  --font-mono: var(--font-mono-base);
+
+  --container-screen: 1240px;
+
+  --radius-pill: 9999px;
+}
+
+html,
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+body {
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  .dark {
+    color-scheme: dark;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+    font-weight: 600;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .always-dark {
+    --background: #0a0a0a;
+    --surface: #121212;
+    --surface-elevated: #171717;
+    --foreground: #f2f0ea;
+    --muted: #8c8c85;
+    --subtle: #5a5a55;
+    --hairline: #232323;
+    --hairline-strong: #2f2f2f;
+    --accent: #f2f0ea;
+    --accent-foreground: #0a0a0a;
+    background-color: var(--background);
+    color: var(--foreground);
+    color-scheme: dark;
+  }
+
+  .always-light {
+    --background: #faf9f5;
+    --surface: #ffffff;
+    --surface-elevated: #ffffff;
+    --foreground: #0a0a0a;
+    --muted: #6b6b66;
+    --subtle: #9a9a93;
+    --hairline: #ebe9e1;
+    --hairline-strong: #d8d6cc;
+    --accent: #0a0a0a;
+    --accent-foreground: #faf9f5;
+    background-color: var(--background);
+    color: var(--foreground);
+    color-scheme: light;
+  }
+
+  .hairline {
+    border-color: var(--hairline);
+  }
+  .text-muted {
+    color: var(--muted);
+  }
+  .text-subtle {
+    color: var(--subtle);
+  }
+  .container-screen {
+    width: 100%;
+    max-width: var(--container-screen);
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .container-screen {
+      padding-inline: 2rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container-screen {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  .grain {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.025;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.7 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  .focus-ring {
+    outline: none;
+  }
+  .focus-ring:focus-visible {
+    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--foreground);
+    border-radius: 9999px;
+  }
+}
+
+/* Reveal animation guard — only hide reveal elements once JS has marked the doc as ready.
+   Ensures SSR, no-JS, and crawler scenarios render content immediately. */
+html.js-ready [data-reveal],
+html.js-ready [data-reveal-child],
+html.js-ready [data-hero-sub],
+html.js-ready [data-hero-cta],
+html.js-ready [data-hero-stat],
+html.js-ready [data-hero-visual],
+html.js-ready [data-hero-line] [data-word],
+html.js-ready [data-step],
+html.js-ready [data-product-reveal] {
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

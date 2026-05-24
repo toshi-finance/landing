@@ -1,0 +1,311 @@
+{
+  "meta": {
+    "title": "Toshi — Modern payments. No gatekeepers.",
+    "description": "Toshi is the permissionless payments layer to get paid with the simplicity of Apple Pay — no closed keys, no annual subscriptions, no losing control of your money."
+  },
+  "navbar": {
+    "product": "Product",
+    "howItWorks": "How it works",
+    "security": "Security",
+    "forWhom": "Who it's for",
+    "signIn": "Sign in",
+    "joinWaitlist": "Join the waitlist"
+  },
+  "hero": {
+    "headlineLine1": "Modern payments.",
+    "headlineLine2": "No gatekeepers.",
+    "subhead": "Get paid through a familiar checkout, without closed keys, annual subscriptions, or third-party custody.",
+    "ctaPrimary": "Join the waitlist",
+    "ctaSecondary": "See how it works",
+    "mockupAmount": "428.50",
+    "mockupCurrency": "USD",
+    "mockupMerchant": "Madera Studio",
+    "mockupItem": "Coffee table · Oak",
+    "mockupConfirm": "Confirm with passkey",
+    "mockupAccount": "Personal account",
+    "mockupLive": "Live",
+    "badgeNonCustodial": "Non-custodial",
+    "badgePasskey": "Passkey native",
+    "stat1Value": "$0",
+    "stat1Label": "Annual subscription",
+    "stat2Value": "<30s",
+    "stat2Label": "Time to first charge",
+    "stat3Value": "100%",
+    "stat3Label": "Non-custodial"
+  },
+  "marquee": {
+    "label": "Built for",
+    "items": [
+      "Merchants",
+      "Freelancers",
+      "Creators",
+      "Marketplaces",
+      "Apps",
+      "Remote teams"
+    ]
+  },
+  "problem": {
+    "eyebrow": "The problem",
+    "title": "Accepting modern payments shouldn't take six months.",
+    "intro": "Apple Pay, Google Pay and the legacy processors turned something as basic as receiving money into a maze of approvals, contracts and fees.",
+    "items": [
+      {
+        "title": "Closed approvals",
+        "body": "You need keys, verified domains and manual approval before charging a single dollar."
+      },
+      {
+        "title": "Annual subscriptions",
+        "body": "You pay just to be on the list, not for using the service. And the price goes up every year."
+      },
+      {
+        "title": "Gatekeeper dependency",
+        "body": "If Apple, Google or your bank decides so, you stop charging tomorrow. No appeal."
+      },
+      {
+        "title": "Custody of your money",
+        "body": "Money sits in transit for days, in accounts that aren't yours, with opaque holdbacks."
+      }
+    ]
+  },
+  "solution": {
+    "eyebrow": "The solution",
+    "title": "A payments layer that actually belongs to you.",
+    "body": "Toshi is the open infrastructure to get paid like Apple Pay — without asking anyone for permission. Simple for your customer, sovereign for you.",
+    "imageCaption": "For people who live from what they create.",
+    "pillars": [
+      {
+        "title": "Permissionless",
+        "body": "No forms, no keys, no waiting. If you have a device, you can already charge."
+      },
+      {
+        "title": "Familiar",
+        "body": "The experience your customer already knows: one sheet, one tap, done."
+      },
+      {
+        "title": "Sovereign",
+        "body": "Money goes straight to your wallet. You sign, you decide, you custody."
+      }
+    ]
+  },
+  "howItWorks": {
+    "eyebrow": "How it works",
+    "title": "Four steps. No runaround.",
+    "subtitle": "From opening Toshi to receiving your first payment, it takes less than thirty seconds.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Create or connect your wallet",
+        "body": "A passkey on your device is enough. No seed phrase to store, no extension to install."
+      },
+      {
+        "number": "02",
+        "title": "Share a charge",
+        "body": "Generate a link, a QR code or drop in the SDK. Works on web, app and in-person."
+      },
+      {
+        "number": "03",
+        "title": "Your customer signs with a passkey",
+        "body": "Confirm with Face ID or fingerprint. The same flow as Apple Pay — without the restrictions."
+      },
+      {
+        "number": "04",
+        "title": "Settle instantly",
+        "body": "Money lands in your wallet right away, ready to move, convert or spend."
+      }
+    ]
+  },
+  "benefits": {
+    "eyebrow": "Benefits",
+    "title": "Designed to feel in control from the very first payment.",
+    "items": [
+      {
+        "title": "Non-custodial",
+        "body": "Your money never goes through our hands. It moves from your customer to your wallet, no middlemen."
+      },
+      {
+        "title": "No subscriptions",
+        "body": "You only pay when you get paid. No annual fees, no minimums, no surprises."
+      },
+      {
+        "title": "No gatekeepers",
+        "body": "No one can pause your account, hold your funds or decide if you qualify."
+      },
+      {
+        "title": "Familiar UX",
+        "body": "Your customers pay with the same fluidity they use Apple Pay or Google Pay."
+      },
+      {
+        "title": "Global from day one",
+        "body": "Charge someone in Madrid, Buenos Aires or Tokyo with the exact same flow."
+      },
+      {
+        "title": "Open by default",
+        "body": "Open APIs, public SDKs and verifiable standards. No lock-in."
+      }
+    ]
+  },
+  "product": {
+    "eyebrow": "Product",
+    "title": "Everything you'd expect from a neobank. None of what slows you down.",
+    "subtitle": "Payments, activity and authorizations in an interface built for daily operation.",
+    "tab1": "Customer checkout",
+    "tab2": "Activity dashboard",
+    "tab3": "Passkey confirmation",
+    "panel1Title": "A clear sheet to close the charge.",
+    "panel1Body": "The buyer sees the amount, merchant and account before confirming with a passkey. No unnecessary redirects.",
+    "panel2Title": "Your activity, in real time.",
+    "panel2Body": "Track incoming payments, average ticket size and settlement status without leaving the dashboard.",
+    "panel3Title": "Local signatures, total control.",
+    "panel3Body": "Every authorization happens on the user's device. Toshi coordinates the flow without custodying the key.",
+    "bullets": [
+      "Payment links and embeddable checkout",
+      "Live API, webhooks and exports",
+      "Multi-device and multi-wallet support"
+    ]
+  },
+  "forWhom": {
+    "eyebrow": "Who it's for",
+    "title": "Built for those who get paid. Designed for those who build.",
+    "imageLabel": "Madera Studio",
+    "imageCaption": "From local storefront to global checkout.",
+    "caseCta": "View use case",
+    "items": [
+      {
+        "tag": "Merchants",
+        "title": "For physical and online stores",
+        "body": "Accept payments at the counter or in checkout — without six-month contracts."
+      },
+      {
+        "tag": "Freelancers",
+        "title": "For independent professionals",
+        "body": "Send a link, receive the payment, see it in your wallet in seconds."
+      },
+      {
+        "tag": "Creators",
+        "title": "For creators and communities",
+        "body": "Monetize your audience without a platform skimming 30 %."
+      },
+      {
+        "tag": "Apps",
+        "title": "For product teams",
+        "body": "Integrate charges through open APIs and a flow your team can adapt."
+      }
+    ]
+  },
+  "security": {
+    "eyebrow": "Security",
+    "title": "Sovereignty without giving up simplicity.",
+    "body": "Toshi relies on native device passkeys and non-custodial wallets. No seed phrases to lose, no servers of ours to compromise.",
+    "items": [
+      {
+        "title": "Native passkeys",
+        "body": "Use Face ID, Touch ID or Windows Hello. The key never leaves the device."
+      },
+      {
+        "title": "Local signatures",
+        "body": "Every transaction is signed on the user's hardware. We never see the key."
+      },
+      {
+        "title": "Non-custodial",
+        "body": "Money goes straight to your wallet. If Toshi disappears, your funds are still yours."
+      },
+      {
+        "title": "Auditable and open",
+        "body": "Everything that matters happens on-chain or via public standards. Verify, don't trust."
+      }
+    ]
+  },
+  "finalCta": {
+    "eyebrow": "Start today",
+    "title": "Get paid like a neobank. Without asking permission.",
+    "body": "Join the waitlist and be one of the first to start charging with Toshi.",
+    "ctaPrimary": "Join the waitlist",
+    "ctaSecondary": "Talk to the team",
+    "placeholder": "you@email.com",
+    "submit": "Reserve my access"
+  },
+  "footer": {
+    "tagline": "Modern payments. No gatekeepers.",
+    "product": "Product",
+    "company": "Company",
+    "resources": "Resources",
+    "legal": "Legal",
+    "links": {
+      "features": "Features",
+      "security": "Security",
+      "pricing": "Pricing",
+      "changelog": "Changelog",
+      "about": "About",
+      "careers": "Careers",
+      "contact": "Contact",
+      "blog": "Blog",
+      "docs": "Docs",
+      "status": "Status",
+      "privacy": "Privacy",
+      "terms": "Terms"
+    },
+    "rights": "All rights reserved."
+  },
+  "theme": {
+    "toggleLabel": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "locale": {
+    "label": "Language",
+    "es": "Español",
+    "en": "English"
+  },
+  "mockups": {
+    "paymentSheet": {
+      "securePay": "Secure pay",
+      "network": "Network",
+      "fee": "Fee",
+      "settle": "Settle",
+      "instant": "Instant",
+      "accountDigits": "·· 4290"
+    },
+    "dashboard": {
+      "title": "Activity · Today",
+      "live": "Live",
+      "kpiToday": "Today",
+      "kpiPayments": "Payments",
+      "kpiAverage": "Avg ticket",
+      "customer": "Customer",
+      "concept": "Concept",
+      "amount": "Amount",
+      "status": "Status",
+      "settled": "Settled",
+      "rows": [
+        {
+          "customer": "Lucia Mendez",
+          "item": "Coffee table",
+          "amount": "$428.50"
+        },
+        {
+          "customer": "Andres Pina",
+          "item": "Subscription · June",
+          "amount": "$24.00"
+        },
+        {
+          "customer": "Camila Ruiz",
+          "item": "Digital product",
+          "amount": "$189.00"
+        },
+        {
+          "customer": "Marc Olivier",
+          "item": "Coaching session",
+          "amount": "$95.00"
+        }
+      ]
+    },
+    "passkey": {
+      "eyebrow": "Toshi · auth",
+      "status": "Local",
+      "title": "Authorize payment",
+      "body": "Use your passkey to sign. The key stays on this device.",
+      "amount": "Amount",
+      "total": "$428.50 USD"
+    }
+  }
+}

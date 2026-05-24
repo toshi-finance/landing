@@ -1,0 +1,283 @@
+"use client";
+
+import Image from "next/image";
+import { useRef } from "react";
+import { useTranslations } from "next-intl";
+import { gsap, useGSAP } from "@/lib/gsap";
+import { Button } from "@/components/ui/Button";
+
+export function Hero() {
+  const t = useTranslations("hero");
+  const ref = useRef<HTMLElement>(null);
+  const imgRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const bridgeRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
+      mm.add(
+        {
+          motion: "(prefers-reduced-motion: no-preference)",
+          reduced: "(prefers-reduced-motion: reduce)",
+        },
+        (ctx) => {
+          if (!ctx.conditions?.motion) return;
+
+          const tl = gsap.timeline({ defaults: { ease: "expo.out" } });
+
+          tl.from("[data-hero-image]", {
+            opacity: 0,
+            scale: 1.06,
+            duration: 1.4,
+          });
+
+          tl.from(
+            "[data-hero-line]",
+            { opacity: 0, y: 36, duration: 1, stagger: 0.08 },
+            "-=0.7",
+          );
+
+          tl.from(
+            "[data-hero-sub]",
+            { opacity: 0, y: 18, duration: 0.8 },
+            "-=0.6",
+          );
+          tl.from(
+            "[data-hero-cta]",
+            { opacity: 0, y: 14, duration: 0.6, stagger: 0.08 },
+            "-=0.55",
+          );
+
+          if (imgRef.current) {
+            gsap.set(imgRef.current, {
+              borderRadius: 0,
+              clipPath: "inset(0% 0% 0% 0% round 0px)",
+              transformOrigin: "50% 45%",
+            });
+          }
+          if (contentRef.current && bridgeRef.current && imgRef.current && cardsRef.current) {
+            gsap.set(bridgeRef.current, { yPercent: 70, autoAlpha: 0 });
+            gsap.set(cardsRef.current, { autoAlpha: 0, y: 90, scale: 0.94 });
+            gsap.set("[data-hero-card]", { autoAlpha: 0, y: 80, scale: 0.82 });
+            gsap.set("[data-hero-card='left']", { xPercent: 55, rotation: -3 });
+            gsap.set("[data-hero-card='right']", { xPercent: -55, rotation: 3 });
+
+            const transition = gsap.timeline({
+              scrollTrigger: {
+                trigger: ref.current,
+                start: "top top",
+                end: "+=78%",
+                scrub: 0.75,
+              },
+            });
+
+            transition
+              .to(contentRef.current, {
+                y: -150,
+                scale: 0.9,
+                autoAlpha: 0,
+                ease: "none",
+              }, 0)
+              .to(imgRef.current, {
+                scale: 0.42,
+                yPercent: -18,
+                clipPath: "inset(6% 34% 8% 34% round 34px)",
+                ease: "none",
+              }, 0)
+              .to(bridgeRef.current, {
+                yPercent: 0,
+                autoAlpha: 1,
+                ease: "none",
+              }, 0.06)
+              .to(cardsRef.current, {
+                autoAlpha: 1,
+                y: 0,
+                scale: 1,
+                ease: "none",
+              }, 0.14)
+              .to("[data-hero-card]", {
+                autoAlpha: 1,
+                y: 0,
+                scale: 1,
+                xPercent: 0,
+                rotation: 0,
+                stagger: 0.04,
+                ease: "none",
+              }, 0.18);
+          }
+        },
+      );
+      return () => mm.revert();
+    },
+    { scope: ref },
+  );
+
+  return (
+    <section
+      ref={ref}
+      className="relative isolate h-[185svh] overflow-clip text-white [--accent-foreground:#0a0a0a] [--accent:#f2f0ea] [--background:#0a0a0a] [--foreground:#f2f0ea] [--muted:#d8d6cc]"
+      aria-label="Toshi"
+    >
+      <div className="sticky top-0 h-[100svh] overflow-hidden pt-16 md:pt-[72px]">
+        <div
+          ref={imgRef}
+          data-hero-image
+          className="absolute inset-0 z-0 will-change-transform"
+        >
+          <Image
+            src="/images/hero-cinematic.png"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[center_18%]"
+          />
+          <div
+            aria-hidden
+            className="absolute inset-0 bg-gradient-to-t from-black/42 via-black/10 to-transparent"
+          />
+          <div
+            aria-hidden
+            className="absolute inset-0 bg-gradient-to-r from-black/16 via-transparent to-black/10"
+          />
+        </div>
+
+        <div
+          ref={bridgeRef}
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 bottom-[-1px] z-[1] h-[64svh] bg-gradient-to-t from-[#faf9f5] via-[#faf9f5]/96 to-transparent opacity-0 will-change-transform"
+        />
+
+        <div
+          ref={contentRef}
+          className="container-screen relative z-10 flex min-h-[calc(100svh-72px)] flex-col items-center justify-center pb-12 pt-20 text-center will-change-transform sm:pt-24 md:pb-16"
+        >
+          <h1
+            className="mx-auto max-w-[12ch] font-display text-[3.1rem] font-semibold leading-[0.92] tracking-normal text-foreground sm:text-[4.4rem] md:max-w-[13ch] md:text-[5.8rem] lg:text-[6.9rem]"
+          >
+            <span
+              data-hero-line
+              className="block pb-[0.06em]"
+            >
+              {t("headlineLine1")}
+            </span>
+            <span
+              data-hero-line
+              className="block pb-[0.06em]"
+            >
+              {t("headlineLine2")}
+            </span>
+          </h1>
+
+          <p
+            data-hero-sub
+            className="mx-auto mt-7 max-w-xl text-base leading-relaxed text-foreground/82 sm:text-lg md:text-xl"
+          >
+            {t("subhead")}
+          </p>
+          <div className="mt-7 flex w-full max-w-sm flex-col items-stretch justify-center gap-3 sm:max-w-none sm:flex-row sm:items-center">
+            <a href="#cta" data-hero-cta>
+              <Button size="lg" className="w-full sm:w-auto">
+                {t("ctaPrimary")}
+                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
+                  <path d="M5 12h14" />
+                  <path d="M13 5l7 7-7 7" />
+                </svg>
+              </Button>
+            </a>
+            <a href="#how-it-works" data-hero-cta className="inline-flex h-12 items-center justify-center text-sm font-medium text-foreground/78 underline-offset-4 hover:text-foreground hover:underline sm:h-auto">
+              {t("ctaSecondary")}
+            </a>
+          </div>
+        </div>
+
+        <div
+          ref={cardsRef}
+          className="container-screen pointer-events-none absolute inset-x-0 bottom-[7svh] z-20 text-neutral-950 opacity-0 will-change-transform"
+        >
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="font-display text-3xl font-semibold leading-tight tracking-normal sm:text-5xl">
+              Cobrar sin pedir permiso.
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-base leading-relaxed text-neutral-600">
+              Tres formas de empezar: link, checkout o passkey nativa.
+            </p>
+          </div>
+
+          <div className="mx-auto mt-8 grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-3">
+            <HeroCard
+              tone="dark"
+              image="/images/creator-lifestyle.png"
+              title={t("stat1Label")}
+              value={t("stat1Value")}
+              footnote="Links de cobro"
+              side="left"
+            />
+            <HeroCard
+              image="/images/hero-portrait.png"
+              title={t("stat2Label")}
+              value={`$${t("mockupAmount")}`}
+              footnote={t("mockupConfirm")}
+              side="center"
+            />
+            <HeroCard
+              tone="dark"
+              image="/images/merchant-shop.png"
+              title={t("badgeNonCustodial")}
+              value={t("stat3Value")}
+              footnote="Checkout global"
+              side="right"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function HeroCard({
+  image,
+  title,
+  value,
+  footnote,
+  side,
+  tone = "light",
+}: {
+  image: string;
+  title: string;
+  value: string;
+  footnote: string;
+  side: "left" | "center" | "right";
+  tone?: "light" | "dark";
+}) {
+  return (
+    <div
+      data-hero-card={side}
+      className="relative min-h-[320px] overflow-hidden rounded-[1.6rem] bg-neutral-900 shadow-[0_32px_80px_-42px_rgba(0,0,0,0.7)] will-change-transform"
+    >
+      <Image
+        src={image}
+        alt=""
+        fill
+        sizes="(min-width: 768px) 280px, 80vw"
+        className="object-cover"
+      />
+      <div
+        className={
+          tone === "dark"
+            ? "absolute inset-0 bg-gradient-to-t from-black/72 via-black/20 to-transparent"
+            : "absolute inset-0 bg-gradient-to-t from-black/42 via-transparent to-transparent"
+        }
+      />
+      <div className="absolute inset-x-0 bottom-0 p-5 text-center text-white">
+        <p className="text-[12px] font-medium text-white/72">{title}</p>
+        <p className="mt-1 font-display text-4xl font-semibold leading-none">{value}</p>
+        <span className="mt-4 inline-flex rounded-full bg-white px-4 py-2 text-sm font-semibold text-neutral-950">
+          {footnote}
+        </span>
+      </div>
+    </div>
+  );
+}
