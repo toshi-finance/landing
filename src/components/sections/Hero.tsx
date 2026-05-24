@@ -203,10 +203,10 @@ export function Hero() {
         >
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="font-display text-3xl font-semibold leading-tight tracking-normal md:text-5xl">
-              Cobrar sin pedir permiso.
+              {t("transitionTitle")}
             </h2>
             <p className="mx-auto mt-3 max-w-[20rem] text-sm leading-relaxed text-neutral-600 md:max-w-xl md:text-base">
-              Tres formas de empezar: link, checkout o passkey nativa.
+              {t("transitionSubtitle")}
             </p>
           </div>
 
@@ -216,7 +216,7 @@ export function Hero() {
               image="/images/creator-lifestyle.png"
               title={t("stat1Label")}
               value={t("stat1Value")}
-              footnote="Links de cobro"
+              footnote={t("transitionLink")}
               side="left"
             />
             <HeroCard
@@ -231,7 +231,7 @@ export function Hero() {
               image="/images/merchant-shop.png"
               title={t("badgeNonCustodial")}
               value={t("stat3Value")}
-              footnote="Checkout global"
+              footnote={t("transitionCheckout")}
               side="right"
             />
           </div>
