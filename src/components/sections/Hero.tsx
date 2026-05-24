@@ -19,11 +19,13 @@ export function Hero() {
       const mm = gsap.matchMedia();
       mm.add(
         {
+          desktop: "(min-width: 768px)",
           motion: "(prefers-reduced-motion: no-preference)",
           reduced: "(prefers-reduced-motion: reduce)",
         },
         (ctx) => {
           if (!ctx.conditions?.motion) return;
+          const isDesktop = ctx.conditions.desktop;
 
           const tl = gsap.timeline({ defaults: { ease: "expo.out" } });
 
@@ -59,10 +61,12 @@ export function Hero() {
           }
           if (contentRef.current && bridgeRef.current && imgRef.current && cardsRef.current) {
             gsap.set(bridgeRef.current, { yPercent: 70, autoAlpha: 0 });
-            gsap.set(cardsRef.current, { autoAlpha: 0, y: 90, scale: 0.94 });
-            gsap.set("[data-hero-card]", { autoAlpha: 0, y: 80, scale: 0.82 });
-            gsap.set("[data-hero-card='left']", { xPercent: 55, rotation: -3 });
-            gsap.set("[data-hero-card='right']", { xPercent: -55, rotation: 3 });
+            gsap.set(cardsRef.current, { autoAlpha: 0, y: isDesktop ? 90 : 46, scale: isDesktop ? 0.94 : 1 });
+            gsap.set("[data-hero-card]", { autoAlpha: 0, y: isDesktop ? 80 : 34, scale: isDesktop ? 0.82 : 0.96, xPercent: 0, rotation: 0 });
+            if (isDesktop) {
+              gsap.set("[data-hero-card='left']", { xPercent: 55, rotation: -3 });
+              gsap.set("[data-hero-card='right']", { xPercent: -55, rotation: 3 });
+            }
 
             const transition = gsap.timeline({
               scrollTrigger: {
@@ -75,15 +79,17 @@ export function Hero() {
 
             transition
               .to(contentRef.current, {
-                y: -150,
-                scale: 0.9,
+                y: isDesktop ? -150 : -72,
+                scale: isDesktop ? 0.9 : 0.96,
                 autoAlpha: 0,
                 ease: "none",
               }, 0)
               .to(imgRef.current, {
-                scale: 0.42,
-                yPercent: -18,
-                clipPath: "inset(6% 34% 8% 34% round 34px)",
+                scale: isDesktop ? 0.42 : 0.72,
+                yPercent: isDesktop ? -18 : -21,
+                clipPath: isDesktop
+                  ? "inset(6% 34% 8% 34% round 34px)"
+                  : "inset(8% 16% 40% 16% round 24px)",
                 ease: "none",
               }, 0)
               .to(bridgeRef.current, {
@@ -117,7 +123,7 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative isolate h-[185svh] overflow-clip text-white [--accent-foreground:#0a0a0a] [--accent:#f2f0ea] [--background:#0a0a0a] [--foreground:#f2f0ea] [--muted:#d8d6cc]"
+      className="relative isolate h-[205svh] overflow-clip text-white [--accent-foreground:#0a0a0a] [--accent:#f2f0ea] [--background:#0a0a0a] [--foreground:#f2f0ea] [--muted:#d8d6cc] md:h-[185svh]"
       aria-label="Toshi"
     >
       <div className="sticky top-0 h-[100svh] overflow-hidden pt-16 md:pt-[72px]">
@@ -195,18 +201,18 @@ export function Hero() {
 
         <div
           ref={cardsRef}
-          className="container-screen pointer-events-none absolute inset-x-0 bottom-[7svh] z-20 text-neutral-950 opacity-0 will-change-transform"
+          className="container-screen pointer-events-none absolute inset-x-0 bottom-[4svh] z-20 text-neutral-950 opacity-0 will-change-transform md:bottom-[7svh]"
         >
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="font-display text-3xl font-semibold leading-tight tracking-normal sm:text-5xl">
+            <h2 className="font-display text-3xl font-semibold leading-tight tracking-normal md:text-5xl">
               Cobrar sin pedir permiso.
             </h2>
-            <p className="mx-auto mt-3 max-w-xl text-base leading-relaxed text-neutral-600">
+            <p className="mx-auto mt-3 max-w-[20rem] text-sm leading-relaxed text-neutral-600 md:max-w-xl md:text-base">
               Tres formas de empezar: link, checkout o passkey nativa.
             </p>
           </div>
 
-          <div className="mx-auto mt-8 grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-3">
+          <div className="mx-auto mt-6 grid max-w-[22rem] grid-cols-1 gap-3 md:mt-8 md:max-w-4xl md:grid-cols-3 md:gap-4">
             <HeroCard
               tone="dark"
               image="/images/creator-lifestyle.png"
@@ -255,7 +261,7 @@ function HeroCard({
   return (
     <div
       data-hero-card={side}
-      className="relative min-h-[320px] overflow-hidden rounded-[1.6rem] bg-neutral-900 shadow-[0_32px_80px_-42px_rgba(0,0,0,0.7)] will-change-transform"
+      className="relative min-h-[150px] overflow-hidden rounded-[1.25rem] bg-neutral-900 shadow-[0_24px_60px_-34px_rgba(0,0,0,0.6)] will-change-transform md:min-h-[320px] md:rounded-[1.6rem] md:shadow-[0_32px_80px_-42px_rgba(0,0,0,0.7)]"
     >
       <Image
         src={image}
@@ -271,10 +277,10 @@ function HeroCard({
             : "absolute inset-0 bg-gradient-to-t from-black/42 via-transparent to-transparent"
         }
       />
-      <div className="absolute inset-x-0 bottom-0 p-5 text-center text-white">
-        <p className="text-[12px] font-medium text-white/72">{title}</p>
-        <p className="mt-1 font-display text-4xl font-semibold leading-none">{value}</p>
-        <span className="mt-4 inline-flex rounded-full bg-white px-4 py-2 text-sm font-semibold text-neutral-950">
+      <div className="absolute inset-x-0 bottom-0 p-4 text-center text-white md:p-5">
+        <p className="text-[11px] font-medium text-white/72 md:text-[12px]">{title}</p>
+        <p className="mt-1 font-display text-3xl font-semibold leading-none md:text-4xl">{value}</p>
+        <span className="mt-3 inline-flex rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-neutral-950 md:mt-4 md:px-4 md:py-2 md:text-sm">
           {footnote}
         </span>
       </div>
