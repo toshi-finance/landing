@@ -59,14 +59,12 @@ export function Hero() {
               transformOrigin: "50% 45%",
             });
           }
-          if (contentRef.current && bridgeRef.current && imgRef.current && cardsRef.current) {
+          if (isDesktop && contentRef.current && bridgeRef.current && imgRef.current && cardsRef.current) {
             gsap.set(bridgeRef.current, { yPercent: 70, autoAlpha: 0 });
             gsap.set(cardsRef.current, { autoAlpha: 0, y: isDesktop ? 90 : 46, scale: isDesktop ? 0.94 : 1 });
             gsap.set("[data-hero-card]", { autoAlpha: 0, y: isDesktop ? 80 : 34, scale: isDesktop ? 0.82 : 0.96, xPercent: 0, rotation: 0 });
-            if (isDesktop) {
-              gsap.set("[data-hero-card='left']", { xPercent: 55, rotation: -3 });
-              gsap.set("[data-hero-card='right']", { xPercent: -55, rotation: 3 });
-            }
+            gsap.set("[data-hero-card='left']", { xPercent: 55, rotation: -3 });
+            gsap.set("[data-hero-card='right']", { xPercent: -55, rotation: 3 });
 
             const transition = gsap.timeline({
               scrollTrigger: {
@@ -123,7 +121,7 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative isolate h-[205svh] overflow-clip text-white [--accent-foreground:#0a0a0a] [--accent:#f2f0ea] [--background:#0a0a0a] [--foreground:#f2f0ea] [--muted:#d8d6cc] md:h-[185svh]"
+      className="relative isolate h-[100svh] overflow-clip text-white [--accent-foreground:#0a0a0a] [--accent:#f2f0ea] [--background:#0a0a0a] [--foreground:#f2f0ea] [--muted:#d8d6cc] md:h-[185svh]"
       aria-label="Toshi"
     >
       <div className="sticky top-0 h-[100svh] overflow-hidden pt-16 md:pt-[72px]">
@@ -153,7 +151,7 @@ export function Hero() {
         <div
           ref={bridgeRef}
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 bottom-[-1px] z-[1] h-[64svh] bg-gradient-to-t from-[#faf9f5] via-[#faf9f5]/96 to-transparent opacity-0 will-change-transform"
+          className="pointer-events-none absolute inset-x-0 bottom-[-1px] z-[1] hidden h-[64svh] bg-gradient-to-t from-[#faf9f5] via-[#faf9f5]/96 to-transparent opacity-0 will-change-transform md:block"
         />
 
         <div
@@ -201,7 +199,7 @@ export function Hero() {
 
         <div
           ref={cardsRef}
-          className="container-screen pointer-events-none absolute inset-x-0 bottom-[4svh] z-20 text-neutral-950 opacity-0 will-change-transform md:bottom-[7svh]"
+          className="container-screen pointer-events-none absolute inset-x-0 bottom-[7svh] z-20 hidden text-neutral-950 opacity-0 will-change-transform md:block"
         >
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="font-display text-3xl font-semibold leading-tight tracking-normal md:text-5xl">
