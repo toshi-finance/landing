@@ -15,30 +15,15 @@ export function Logo({
       )}
       aria-label="Toshi"
     >
-      <svg
-        viewBox="0 0 32 32"
-        className="h-7 w-7"
+      <img
+        src="/images/toshi-icon-transparent.png"
+        alt=""
+        className="h-7 w-7 object-contain"
         aria-hidden="true"
-      >
-        <rect
-          x="0.75"
-          y="0.75"
-          width="30.5"
-          height="30.5"
-          rx="8"
-          fill="currentColor"
-        />
-        <path
-          d="M9 11.5h14M16 11.5v12"
-          stroke="var(--background)"
-          strokeWidth="2.6"
-          strokeLinecap="round"
-        />
-      </svg>
+      />
       {withWordmark && (
         <span
-          className="font-display text-[1.35rem] font-semibold tracking-tight"
-          style={{ letterSpacing: "-0.04em" }}
+          className="font-display text-[1.35rem] font-semibold"
         >
           Toshi
         </span>
