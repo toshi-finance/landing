@@ -121,6 +121,7 @@ export function Hero() {
   return (
     <section
       ref={ref}
+      data-header-theme="dark"
       className="relative isolate h-[100svh] overflow-clip text-white [--accent-foreground:#0a0a0a] [--accent:#f2f0ea] [--background:#0a0a0a] [--foreground:#f2f0ea] [--muted:#d8d6cc] md:h-[185svh]"
       aria-label="Toshi"
     >

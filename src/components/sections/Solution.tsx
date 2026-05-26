@@ -12,6 +12,7 @@ export function Solution() {
   return (
     <section
       ref={ref}
+      data-header-theme="dark"
       className="always-dark relative isolate overflow-hidden"
     >
       <div className="grid lg:grid-cols-12">

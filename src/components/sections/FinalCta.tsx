@@ -55,6 +55,7 @@ export function FinalCta() {
     <section
       ref={ref}
       id="cta"
+      data-header-theme="dark"
       className="always-dark relative isolate overflow-hidden py-32 md:py-44"
     >
       <div

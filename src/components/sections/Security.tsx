@@ -13,6 +13,7 @@ export function Security() {
     <section
       ref={ref}
       id="security"
+      data-header-theme="dark"
       className="always-dark relative isolate py-28 md:py-36"
     >
       <div className="container-screen">

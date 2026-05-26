@@ -17,15 +17,48 @@ const navItems = [
 export function Navbar() {
   const t = useTranslations("navbar");
   const [scrolled, setScrolled] = useState(false);
+  const [overDarkSection, setOverDarkSection] = useState(true);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    function onScroll() {
+    let frame = 0;
+
+    function syncHeaderState() {
       setScrolled(window.scrollY > window.innerHeight * 1.65);
+
+      const sampleY = window.innerWidth >= 768 ? 36 : 32;
+      const sampleXs = [
+        Math.round(window.innerWidth * 0.18),
+        Math.round(window.innerWidth * 0.5),
+        Math.round(window.innerWidth * 0.82),
+      ];
+      const isOverDark = sampleXs.some((x) =>
+        document
+          .elementsFromPoint(x, sampleY)
+          .some((element) =>
+            element instanceof HTMLElement
+              ? element.dataset.headerTheme === "dark" ||
+                Boolean(element.closest('[data-header-theme="dark"]'))
+              : false,
+          ),
+      );
+
+      setOverDarkSection(isOverDark);
     }
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+
+    function requestSync() {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(syncHeaderState);
+    }
+
+    syncHeaderState();
+    window.addEventListener("scroll", requestSync, { passive: true });
+    window.addEventListener("resize", requestSync);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", requestSync);
+      window.removeEventListener("resize", requestSync);
+    };
   }, []);
 
   useEffect(() => {
@@ -39,22 +72,27 @@ export function Navbar() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 w-full transition-[backdrop-filter,border-color] duration-300",
-        scrolled
-          ? "border-b border-foreground/[0.08] bg-transparent backdrop-blur-md dark:border-white/[0.08]"
-          : "border-b border-transparent bg-transparent [--accent-foreground:#0a0a0a] [--accent:#f2f0ea] [--background:#0a0a0a] [--foreground:#f2f0ea] [--muted:#f2f0ea] [--surface:#121212]",
+        overDarkSection &&
+          "[--accent-foreground:#0a0a0a] [--accent:#f2f0ea] [--background:#0a0a0a] [--foreground:#f2f0ea] [--muted:#f2f0ea] [--surface:#121212]",
+        scrolled ? "border-b backdrop-blur-md" : "border-b border-transparent",
+        scrolled && overDarkSection
+          ? "border-white/[0.08]"
+          : scrolled
+            ? "border-foreground/[0.08] dark:border-white/[0.08]"
+            : "",
       )}
     >
       <div className="container-screen flex h-16 items-center justify-between gap-6 md:h-[72px]">
         <Link href="/" aria-label="Toshi home" className="focus-ring rounded-md">
-          <Logo />
+          <Logo tone={overDarkSection ? "light" : "auto"} />
         </Link>
 
         <nav
           className={cn(
             "hidden items-center gap-8 text-sm lg:flex",
-            scrolled
-              ? "text-muted"
-              : "text-white/88 [text-shadow:0_1px_18px_rgba(0,0,0,0.38)]",
+            overDarkSection
+              ? "text-white/72 [text-shadow:0_1px_18px_rgba(0,0,0,0.38)]"
+              : "text-muted",
           )}
         >
           {navItems.map((item) => (
@@ -63,7 +101,7 @@ export function Navbar() {
               href={item.href}
               className={cn(
                 "transition-colors",
-                scrolled ? "hover:text-foreground" : "hover:text-white",
+                overDarkSection ? "hover:text-white" : "hover:text-foreground",
               )}
             >
               {t(item.id)}
