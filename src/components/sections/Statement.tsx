@@ -13,14 +13,14 @@ export function Statement() {
   // 3 parts: prefix, accent word (mint), suffix
   const parts = isEs
     ? [
-        ["Cobra como un", "neobank", "."],
+        ["Paga en", "segundos", "."],
+        ["Cobra sin pedir", "permiso", "."],
         ["Conserva el", "control", " de tu dinero."],
-        ["Sin pedir", "permiso", " a nadie."],
       ]
     : [
-        ["Charge like a", "neobank", "."],
-        ["Keep the", "control", " of your money."],
-        ["Without asking", "permission", " to anyone."],
+        ["Pay in", "seconds", "."],
+        ["Get paid without", "permission", "."],
+        ["Keep", "control", " of your money."],
       ];
 
   useGSAP(

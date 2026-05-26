@@ -1,21 +1,23 @@
 {
   "meta": {
-    "title": "Toshi — Pagos modernos. Sin permisos.",
-    "description": "Toshi es la capa de pagos permissionless para recibir dinero con la simplicidad de Apple Pay, sin keys cerradas, sin suscripciones anuales y sin entregar el control de tu dinero."
+    "title": "Toshi — Pagos modernos. Sin pedir permiso.",
+    "description": "Toshi es la red de pagos permissionless para pagar y cobrar con la simplicidad de Apple Pay: abierta, no custodial, sin suscripciones anuales y sin perder el control de tu dinero."
   },
   "navbar": {
+    "pay": "Pagar",
+    "charge": "Cobrar",
     "product": "Producto",
     "howItWorks": "Cómo funciona",
     "security": "Seguridad",
-    "forWhom": "Para quién",
     "signIn": "Entrar",
     "joinWaitlist": "Unirme a la waitlist"
   },
   "hero": {
     "headlineLine1": "Pagos modernos.",
-    "headlineLine2": "Sin permisos.",
-    "subhead": "Recibe pagos con una experiencia familiar para tu cliente, sin keys cerradas, cuotas anuales ni custodia de terceros.",
-    "ctaPrimary": "Unirme a la waitlist",
+    "headlineLine2": "Sin pedir permiso.",
+    "subhead": "Paga y cobra con la simplicidad de Apple Pay: abierto, no custodial y sin que nadie decida si calificas.",
+    "ctaPrimary": "Empezar a pagar",
+    "ctaCharge": "Empezar a cobrar",
     "ctaSecondary": "Ver cómo funciona",
     "mockupAmount": "428,50",
     "mockupCurrency": "USD",
@@ -26,8 +28,8 @@
     "mockupLive": "En vivo",
     "badgeNonCustodial": "No custodial",
     "badgePasskey": "Passkey nativa",
-    "transitionTitle": "Cobrar sin pedir permiso.",
-    "transitionSubtitle": "Tres formas de empezar: link, checkout o passkey nativa.",
+    "transitionTitle": "Pagar y cobrar sin pedir permiso.",
+    "transitionSubtitle": "Una red, los dos lados: un toque para pagar, link o checkout para cobrar.",
     "transitionLink": "Links de cobro",
     "transitionCheckout": "Checkout global",
     "stat1Value": "0 €",
@@ -38,63 +40,113 @@
     "stat3Label": "No custodial"
   },
   "marquee": {
-    "label": "Construido para",
+    "label": "Una red para",
     "items": [
+      "Personas",
       "Comercios",
       "Freelancers",
       "Creators",
       "Marketplaces",
-      "Apps",
-      "Equipos remotos"
+      "Apps"
     ]
   },
   "problem": {
     "eyebrow": "El problema",
-    "title": "Aceptar pagos modernos no debería ser un proyecto de seis meses.",
-    "intro": "Apple Pay, Google Pay y los procesadores tradicionales convirtieron algo tan básico como recibir dinero en un laberinto de aprobaciones, contratos y cuotas.",
+    "title": "Pagar y cobrar no debería necesitar el permiso de nadie.",
+    "intro": "Los bancos, Apple Pay, Google Pay y los procesadores tradicionales convirtieron algo tan básico como mover dinero en un laberinto de aprobaciones, contratos, comisiones ocultas y cuentas que pueden congelarse de un día para otro.",
     "items": [
       {
         "title": "Aprobaciones cerradas",
-        "body": "Necesitas keys, dominios verificados y aprobación manual antes de cobrar un solo euro."
+        "body": "Dominios verificados, keys y revisiones manuales antes de poder enviar o recibir un solo euro."
       },
       {
-        "title": "Suscripciones anuales",
-        "body": "Pagas por estar en la lista, no por usar el servicio. Y el precio sube cada año."
+        "title": "Comisiones ocultas",
+        "body": "Suscripciones anuales para cobrar, spreads y recargos para pagar. Y el precio sube cada año."
       },
       {
         "title": "Dependencia de gatekeepers",
-        "body": "Si Apple, Google o tu banco lo decide, dejas de cobrar mañana. Sin apelación."
+        "body": "Si Apple, Google o tu banco lo decide, tu cuenta deja de funcionar mañana. Sin apelación."
       },
       {
-        "title": "Custodia de tu dinero",
-        "body": "El dinero se queda días en tránsito, en cuentas que no son tuyas, con retenciones opacas."
+        "title": "Dinero congelado",
+        "body": "Los fondos se quedan días en tránsito, en cuentas que no son tuyas, con retenciones y bloqueos opacos."
       }
     ]
   },
   "solution": {
     "eyebrow": "La solución",
-    "title": "Una capa de pagos que sí te pertenece.",
-    "body": "Toshi es la infraestructura abierta para recibir pagos como si fuera Apple Pay, pero sin pedir permiso a nadie. Simple para tu cliente, soberana para ti.",
-    "imageCaption": "Para los que viven de lo que crean.",
+    "title": "Una red de pagos que sí pertenece a quienes la usan.",
+    "body": "Toshi es la red abierta para pagar y cobrar como si fuera Apple Pay, pero sin pedir permiso a nadie. Familiar para quien paga, soberana para quien cobra.",
+    "imageCaption": "Para los que mueven su dinero en sus propios términos.",
     "pillars": [
       {
         "title": "Permissionless",
-        "body": "Sin formularios, sin keys, sin esperas. Si tienes un dispositivo, ya puedes cobrar."
+        "body": "Sin formularios, sin aprobaciones, sin esperas. Si tienes un dispositivo, ya puedes pagar y cobrar."
       },
       {
         "title": "Familiar",
-        "body": "La experiencia que tu cliente ya conoce: una sheet, un toque, listo."
+        "body": "La experiencia que todos ya conocen: una sheet, un toque, listo."
       },
       {
         "title": "Soberano",
-        "body": "El dinero llega directo a tu wallet. Tú firmas, tú decides, tú custodias."
+        "body": "El dinero va directo de una wallet a otra. Tú firmas, tú decides, tú custodias."
       }
     ]
+  },
+  "twoSides": {
+    "eyebrow": "Dos lados, un toque",
+    "title": "Paga con Toshi. Cobra con Toshi.",
+    "subtitle": "La misma red, desde los dos lados del mostrador. Elige por dónde empezar.",
+    "pay": {
+      "tag": "Para personas",
+      "title": "Paga con Toshi",
+      "body": "Carga saldo en tu cuenta y paga donde acepten Toshi: tan simple como Apple Pay, pero abierto y tuyo.",
+      "points": [
+        "Paga en segundos con Face ID o huella",
+        "Sin cuentas congeladas, sin comisiones ocultas",
+        "Tu dinero sigue en tu wallet hasta que pagas"
+      ],
+      "cta": "Crear mi cuenta"
+    },
+    "charge": {
+      "tag": "Para negocios",
+      "title": "Cobra con Toshi",
+      "body": "Acepta pagos sin la burocracia de una pasarela tradicional. Sin aprobaciones manuales, sin contratos largos, con fees más bajos.",
+      "points": [
+        "Empieza a cobrar en menos de 30 segundos",
+        "Los fondos llegan directo a tu wallet",
+        "Sin suscripciones, sin gatekeepers, sin retenciones"
+      ],
+      "cta": "Empezar a cobrar"
+    }
+  },
+  "network": {
+    "eyebrow": "Una sola red de pagos",
+    "title": "Los dos lados, conectados.",
+    "subtitle": "Sin intermediarios entre tú y tu dinero. El pago va directo de la persona al negocio.",
+    "steps": [
+      {
+        "label": "Persona",
+        "title": "Paga en un toque",
+        "body": "Confirma con su passkey: la misma fluidez de Apple Pay."
+      },
+      {
+        "label": "Toshi",
+        "title": "Lo enruta sin custodiar",
+        "body": "Toshi coordina el pago sin tocar el dinero en ningún momento."
+      },
+      {
+        "label": "Negocio",
+        "title": "Recibe al instante",
+        "body": "Los fondos llegan directo a la wallet del negocio, listos para usar."
+      }
+    ],
+    "footnote": "Sin aprobaciones. Sin custodia. Sin nadie en medio decidiendo."
   },
   "howItWorks": {
     "eyebrow": "Cómo funciona",
     "title": "Cuatro pasos. Sin vueltas.",
-    "subtitle": "Desde que abres Toshi hasta que recibes tu primer pago pasan menos de treinta segundos.",
+    "subtitle": "Desde que abres Toshi hasta tu primer pago —enviado o recibido— pasan menos de treinta segundos.",
     "steps": [
       {
         "number": "01",
@@ -103,18 +155,18 @@
       },
       {
         "number": "02",
-        "title": "Comparte un cobro",
-        "body": "Genera un link, un QR o integra el SDK. Funciona en web, app y físico."
+        "title": "Paga o comparte un cobro",
+        "body": "Paga con un toque, o genera un link, QR o SDK para cobrar. Funciona en web, app y físico."
       },
       {
         "number": "03",
-        "title": "Tu cliente firma con passkey",
-        "body": "Confirma con Face ID o huella. La misma fluidez de Apple Pay, sin las restricciones."
+        "title": "Confirma con passkey",
+        "body": "Aprueba con Face ID o huella. La misma fluidez de Apple Pay, sin las restricciones."
       },
       {
         "number": "04",
-        "title": "Liquidas al instante",
-        "body": "El dinero llega directo a tu wallet, listo para mover, convertir o usar."
+        "title": "Liquida al instante",
+        "body": "El dinero va directo de una wallet a otra, listo para usar, convertir o gastar."
       }
     ]
   },
@@ -124,23 +176,23 @@
     "items": [
       {
         "title": "Sin custodia",
-        "body": "Tu dinero nunca pasa por nuestras manos. Va de tu cliente a tu wallet, sin intermediarios."
+        "body": "El dinero nunca pasa por nuestras manos. Va directo de una wallet a otra, sin intermediarios."
       },
       {
         "title": "Sin suscripciones",
-        "body": "Pagas solo cuando cobras. Sin cuotas anuales, sin mínimos, sin sorpresas."
+        "body": "Solo pagas un fee pequeño cuando se mueve dinero. Sin cuotas anuales, sin mínimos, sin sorpresas."
       },
       {
         "title": "Sin gatekeepers",
-        "body": "Nadie puede pausar tu cuenta, retener tus fondos o decidir si calificas."
+        "body": "Nadie puede pausar tu cuenta, congelar tus fondos o decidir si calificas."
       },
       {
         "title": "UX familiar",
-        "body": "Tus clientes pagan con la misma fluidez con la que usan Apple Pay o Google Pay."
+        "body": "Paga y cobra con la misma fluidez con la que usas Apple Pay o Google Pay."
       },
       {
         "title": "Global desde el día uno",
-        "body": "Cobra a alguien en Madrid, Buenos Aires o Tokio con el mismo flujo."
+        "body": "Envía o recibe entre Madrid, Buenos Aires o Tokio con el mismo flujo."
       },
       {
         "title": "Open by default",
@@ -148,51 +200,32 @@
       }
     ]
   },
-  "product": {
-    "eyebrow": "Producto",
-    "title": "Todo lo que esperarías de un neobank. Nada de lo que te frena.",
-    "subtitle": "Pagos, actividad y autorizaciones en una interfaz pensada para operar todos los días.",
-    "tab1": "Cobro al cliente",
-    "tab2": "Panel de actividad",
-    "tab3": "Confirmación con passkey",
-    "panel1Title": "Una sheet clara para cerrar el cobro.",
-    "panel1Body": "El comprador ve el importe, el comercio y la cuenta antes de confirmar con su passkey. Sin redirecciones innecesarias.",
-    "panel2Title": "Tu actividad, en tiempo real.",
-    "panel2Body": "Visualiza pagos entrantes, tickets promedio y estado de liquidación sin salir del panel.",
-    "panel3Title": "Firmas locales, control total.",
-    "panel3Body": "Cada autorización ocurre en el dispositivo del usuario. Toshi coordina el flujo sin custodiar la clave.",
-    "bullets": [
-      "Links de cobro y checkout embebible",
-      "API en vivo, webhooks y exportes",
-      "Soporte multi-device y multi-wallet"
-    ]
-  },
   "forWhom": {
     "eyebrow": "Para quién es",
-    "title": "Pensado para quien cobra. Diseñado para quien construye.",
+    "title": "Para todos los que pagan. Para todos los que cobran.",
     "imageLabel": "Estudio Madera",
     "imageCaption": "De la tienda de barrio al checkout global.",
     "caseCta": "Ver caso de uso",
     "items": [
+      {
+        "tag": "Personas",
+        "title": "Para el día a día",
+        "body": "Carga saldo una vez y paga donde acepten Toshi: sin cuentas congeladas, sin comisiones sorpresa."
+      },
       {
         "tag": "Comercios",
         "title": "Para tiendas físicas y online",
         "body": "Acepta pagos en mostrador o en checkout sin contratos de seis meses."
       },
       {
-        "tag": "Freelancers",
-        "title": "Para profesionales independientes",
-        "body": "Envía un link, recibe el pago, lo tienes en tu wallet en segundos."
-      },
-      {
-        "tag": "Creators",
-        "title": "Para creadores y comunidades",
-        "body": "Monetiza tu audiencia sin que una plataforma te retenga el 30 %."
+        "tag": "Freelancers y creators",
+        "title": "Para ingresos independientes",
+        "body": "Envía un link, cobra y lo ves en tu wallet en segundos, sin que una plataforma te retenga el 30 %."
       },
       {
         "tag": "Apps",
         "title": "Para equipos de producto",
-        "body": "Integra cobros con APIs abiertas y un flujo que tu equipo puede adaptar."
+        "body": "Integra pagos con APIs abiertas y un flujo que tu equipo puede adaptar."
       }
     ]
   },
@@ -211,7 +244,7 @@
       },
       {
         "title": "No custodial",
-        "body": "El dinero llega directo a tu wallet. Si Toshi desaparece, tus fondos siguen siendo tuyos."
+        "body": "El dinero se queda en tu wallet. Si Toshi desaparece, tus fondos siguen siendo tuyos."
       },
       {
         "title": "Auditable y abierto",
@@ -221,15 +254,17 @@
   },
   "finalCta": {
     "eyebrow": "Empieza hoy",
-    "title": "Cobra como un neobank. Sin pedir permiso.",
-    "body": "Únete a la waitlist y sé de los primeros en empezar a cobrar con Toshi.",
+    "title": "Paga y cobra. Sin pedir permiso.",
+    "body": "Únete a la waitlist y sé de los primeros en la red de Toshi.",
+    "payTab": "Quiero pagar",
+    "chargeTab": "Quiero cobrar",
     "ctaPrimary": "Unirme a la waitlist",
     "ctaSecondary": "Hablar con el equipo",
     "placeholder": "tu@email.com",
     "submit": "Reservar mi acceso"
   },
   "footer": {
-    "tagline": "Pagos modernos. Sin permisos.",
+    "tagline": "Pagos modernos. Sin pedir permiso.",
     "product": "Producto",
     "company": "Compañía",
     "resources": "Recursos",
@@ -259,57 +294,5 @@
     "label": "Idioma",
     "es": "Español",
     "en": "English"
-  },
-  "mockups": {
-    "paymentSheet": {
-      "securePay": "Pago seguro",
-      "network": "Red",
-      "fee": "Fee",
-      "settle": "Liquidación",
-      "instant": "Instantánea",
-      "accountDigits": "·· 4290"
-    },
-    "dashboard": {
-      "title": "Actividad · Hoy",
-      "live": "En vivo",
-      "kpiToday": "Hoy",
-      "kpiPayments": "Pagos",
-      "kpiAverage": "Ticket medio",
-      "customer": "Cliente",
-      "concept": "Concepto",
-      "amount": "Importe",
-      "status": "Estado",
-      "settled": "Liquidado",
-      "rows": [
-        {
-          "customer": "Lucia Méndez",
-          "item": "Mesa de centro",
-          "amount": "$428,50"
-        },
-        {
-          "customer": "Andrés Piña",
-          "item": "Suscripción · Junio",
-          "amount": "$24,00"
-        },
-        {
-          "customer": "Camila Ruiz",
-          "item": "Producto digital",
-          "amount": "$189,00"
-        },
-        {
-          "customer": "Marc Olivier",
-          "item": "Sesión de coaching",
-          "amount": "$95,00"
-        }
-      ]
-    },
-    "passkey": {
-      "eyebrow": "Toshi · auth",
-      "status": "Local",
-      "title": "Autorizar pago",
-      "body": "Usa tu passkey para firmar. La clave permanece en este dispositivo.",
-      "amount": "Importe",
-      "total": "$428,50 USD"
-    }
   }
 }

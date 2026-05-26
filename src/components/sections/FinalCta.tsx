@@ -10,6 +10,7 @@ export function FinalCta() {
   const ref = useRef<HTMLElement>(null);
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [intent, setIntent] = useState<"pay" | "charge">("pay");
 
   useGSAP(
     () => {
@@ -89,10 +90,32 @@ export function FinalCta() {
           {t("body")}
         </p>
 
+        <div
+          data-final-cta
+          className="mx-auto mt-10 inline-flex items-center gap-1 rounded-full border border-foreground/15 bg-foreground/[0.04] p-1 text-sm"
+        >
+          {(["pay", "charge"] as const).map((key) => (
+            <button
+              key={key}
+              type="button"
+              onClick={() => setIntent(key)}
+              aria-pressed={intent === key}
+              className={cn(
+                "rounded-full px-4 py-2 font-medium transition-colors focus-ring",
+                intent === key
+                  ? "bg-foreground text-background"
+                  : "text-foreground/65 hover:text-foreground",
+              )}
+            >
+              {t(key === "pay" ? "payTab" : "chargeTab")}
+            </button>
+          ))}
+        </div>
+
         <form
           data-final-cta
           onSubmit={onSubmit}
-          className="mx-auto mt-10 flex w-full max-w-md flex-col gap-2 sm:flex-row"
+          className="mx-auto mt-6 flex w-full max-w-md flex-col gap-2 sm:flex-row"
         >
           <label className="sr-only" htmlFor="email">
             Email

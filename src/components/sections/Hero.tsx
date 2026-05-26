@@ -183,7 +183,7 @@ export function Hero() {
             {t("subhead")}
           </p>
           <div className="mt-7 flex w-full max-w-sm flex-col items-stretch justify-center gap-3 sm:max-w-none sm:flex-row sm:items-center">
-            <a href="#cta" data-hero-cta>
+            <a href="#pay" data-hero-cta>
               <Button size="lg" className="w-full sm:w-auto">
                 {t("ctaPrimary")}
                 <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
@@ -192,10 +192,15 @@ export function Hero() {
                 </svg>
               </Button>
             </a>
-            <a href="#how-it-works" data-hero-cta className="inline-flex h-12 items-center justify-center text-sm font-medium text-foreground/78 underline-offset-4 hover:text-foreground hover:underline sm:h-auto">
-              {t("ctaSecondary")}
+            <a href="#charge" data-hero-cta>
+              <Button variant="outline" size="lg" className="w-full border-white/25 text-white hover:border-white/50 hover:bg-white/[0.06] sm:w-auto">
+                {t("ctaCharge")}
+              </Button>
             </a>
           </div>
+          <a href="#how-it-works" data-hero-cta className="mt-5 inline-flex items-center justify-center text-sm font-medium text-foreground/72 underline-offset-4 hover:text-foreground hover:underline">
+            {t("ctaSecondary")}
+          </a>
         </div>
 
         <div

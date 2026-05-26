@@ -9,10 +9,10 @@ import { cn } from "@/lib/cn";
 import { gsap, useGSAP } from "@/lib/gsap";
 
 const navItems = [
-  { id: "product", href: "#product" },
+  { id: "pay", href: "#pay" },
+  { id: "charge", href: "#charge" },
   { id: "howItWorks", href: "#how-it-works" },
   { id: "security", href: "#security" },
-  { id: "forWhom", href: "#for-whom" },
 ] as const;
 
 export function Navbar() {
