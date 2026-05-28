@@ -21,7 +21,7 @@ export function TwoSides() {
   const ref = useReveal<HTMLElement>();
 
   return (
-    <section ref={ref} id="pay" className="py-28 md:py-36">
+    <section ref={ref} id="charge" className="py-28 md:py-36">
       <div className="container-screen">
         <div data-reveal>
           <SectionHeader
@@ -34,17 +34,17 @@ export function TwoSides() {
 
         <div data-reveal className="mt-16 grid gap-5 lg:grid-cols-2 lg:gap-6">
           <SidePanel
-            side={pay}
-            image="/images/creator-lifestyle.png"
+            side={charge}
+            image="/images/merchant-shop.png"
             ctaHref="#cta"
             index="01"
           />
           <SidePanel
-            side={charge}
-            image="/images/merchant-shop.png"
+            side={pay}
+            image="/images/creator-lifestyle.png"
             ctaHref="#cta"
             index="02"
-            id="charge"
+            id="pay"
           />
         </div>
       </div>

@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "Toshi — Modern payments. No permission needed.",
-    "description": "Toshi is the permissionless payments network to pay and get paid with the simplicity of Apple Pay — open, non-custodial, with no annual subscriptions and no losing control of your money."
+    "title": "Toshi — Get paid the second you charge.",
+    "description": "Toshi is the payments network for freelancers and small businesses to get paid as easily as Apple Pay — instant payouts, a low 0.9% fee, no subscription, and no account that can be frozen."
   },
   "navbar": {
     "pay": "Pay",
-    "charge": "Charge",
+    "charge": "Get paid",
     "product": "Product",
     "howItWorks": "How it works",
     "security": "Security",
@@ -13,11 +13,11 @@
     "joinWaitlist": "Join the waitlist"
   },
   "hero": {
-    "headlineLine1": "Modern payments.",
-    "headlineLine2": "No permission needed.",
-    "subhead": "Pay and get paid with the simplicity of Apple Pay — open, non-custodial, and without anyone deciding if you qualify.",
-    "ctaPrimary": "Start paying",
-    "ctaCharge": "Start charging",
+    "headlineLine1": "Get paid the second",
+    "headlineLine2": "you charge.",
+    "subhead": "For freelancers and small businesses. No subscription, no holds, no frozen accounts — just low fees.",
+    "ctaPrimary": "Start getting paid",
+    "ctaCharge": "I want to pay instead",
     "ctaSecondary": "See how it works",
     "mockupAmount": "428.50",
     "mockupCurrency": "USD",
@@ -28,120 +28,120 @@
     "mockupLive": "Live",
     "badgeNonCustodial": "Non-custodial",
     "badgePasskey": "Passkey native",
-    "transitionTitle": "Pay and get paid without asking permission.",
-    "transitionSubtitle": "One network, both sides: tap to pay, link or checkout to charge.",
+    "transitionTitle": "Send a link. Get paid in seconds.",
+    "transitionSubtitle": "Charge clients and customers in seconds — instant payouts straight to your wallet, one low fee, nothing hidden.",
     "transitionLink": "Payment links",
     "transitionCheckout": "Global checkout",
     "stat1Value": "$0",
     "stat1Label": "Annual subscription",
     "stat2Value": "<30s",
     "stat2Label": "Time to first charge",
-    "stat3Value": "100%",
-    "stat3Label": "Non-custodial"
+    "stat3Value": "0.9%",
+    "stat3Label": "Fees from"
   },
   "marquee": {
-    "label": "One network for",
+    "label": "Built for",
     "items": [
-      "People",
-      "Merchants",
       "Freelancers",
       "Creators",
-      "Marketplaces",
-      "Apps"
+      "Small businesses",
+      "Independent shops",
+      "Consultants",
+      "Side projects"
     ]
   },
   "problem": {
     "eyebrow": "The problem",
-    "title": "Paying and getting paid shouldn't need anyone's approval.",
-    "intro": "Banks, Apple Pay, Google Pay and the legacy processors turned something as basic as moving money into a maze of approvals, contracts, hidden fees and accounts that can be frozen overnight.",
+    "title": "Getting paid for your own work shouldn't cost this much.",
+    "intro": "When you run your own thing, every gateway, platform and app store wants a piece before you ever touch your money — a pricey subscription to accept it, a cut off the top, paperwork to qualify, and an account they can freeze whenever they like.",
     "items": [
       {
-        "title": "Closed approvals",
-        "body": "Verified domains, keys and manual reviews before anyone can send or receive a single dollar."
+        "title": "Pay to get paid",
+        "body": "Pricey developer fees, gateway plans and monthly minimums — just for the right to accept a payment."
       },
       {
-        "title": "Hidden fees",
-        "body": "Annual subscriptions to charge, spreads and surcharges to pay. The price quietly goes up every year."
+        "title": "The platform's cut",
+        "body": "Marketplaces and app stores skim up to 30% of income you earned, on every single sale."
       },
       {
-        "title": "Gatekeeper dependency",
-        "body": "If Apple, Google or your bank decides so, your account stops working tomorrow. No appeal."
+        "title": "Approval to qualify",
+        "body": "Verified domains, contracts and manual reviews before a freelancer or small shop can charge a cent."
       },
       {
-        "title": "Frozen money",
-        "body": "Funds sit in transit for days, in accounts that aren't yours, with opaque holdbacks and blocks."
+        "title": "Frozen income",
+        "body": "Your payout sits in transit for days — and one decision from a processor can freeze it overnight."
       }
     ]
   },
   "solution": {
     "eyebrow": "The solution",
-    "title": "A payments network that actually belongs to everyone on it.",
-    "body": "Toshi is the open network to pay and get paid like Apple Pay — without asking anyone for permission. Familiar for whoever pays, sovereign for whoever charges.",
-    "imageCaption": "For people who move money on their own terms.",
+    "title": "Charge clients like Apple Pay — without the subscription.",
+    "body": "Toshi lets freelancers and small businesses accept payments with the simplicity of Apple Pay, minus the subscription, the payout delays and the gatekeepers. Send a link or drop in a checkout, and the money lands in your wallet instantly — for one low fee.",
+    "imageCaption": "For people who run their own thing and want to keep what they earn.",
     "pillars": [
       {
-        "title": "Permissionless",
-        "body": "No forms, no approvals, no waiting. If you have a device, you can already pay and charge."
+        "title": "No subscription",
+        "body": "No annual developer fee, no gateway plan, no minimums. You only pay a small fee when money actually moves."
       },
       {
-        "title": "Familiar",
-        "body": "The experience everyone already knows: one sheet, one tap, done."
+        "title": "Start in minutes",
+        "body": "No forms, no contracts, no approval queue. Share a link and you're getting paid in under 30 seconds."
       },
       {
-        "title": "Sovereign",
-        "body": "Money moves straight between wallets. You sign, you decide, you custody."
+        "title": "It's yours",
+        "body": "Funds go straight to your wallet the instant you're paid — no payout delays, no holdbacks, no account anyone can freeze."
       }
     ]
   },
   "twoSides": {
-    "eyebrow": "Two sides, one tap",
-    "title": "Pay with Toshi. Get paid with Toshi.",
-    "subtitle": "The same network, from both sides of the counter. Pick where you start.",
+    "eyebrow": "Built around getting paid",
+    "title": "Get paid with Toshi. Spend it with Toshi.",
+    "subtitle": "Everything starts with accepting money — and the same wallet lets you spend it the moment it lands.",
+    "charge": {
+      "tag": "Get paid",
+      "title": "Charge clients and customers",
+      "body": "Send a payment link, drop a checkout into your site, or take it in person. No gateway paperwork, no subscription, no long contracts.",
+      "points": [
+        "Start charging in under 30 seconds",
+        "Instant payouts straight to your wallet",
+        "No subscriptions, no gatekeepers, no holdbacks"
+      ],
+      "cta": "Start getting paid"
+    },
     "pay": {
-      "tag": "For people",
-      "title": "Pay with Toshi",
-      "body": "Top up your account and pay anywhere Toshi is accepted — as simple as Apple Pay, but open and yours.",
+      "tag": "Spend it",
+      "title": "Then spend what you earned",
+      "body": "The money you're paid is already in your wallet — spend it anywhere Toshi is accepted, as simply as Apple Pay.",
       "points": [
         "Pay in seconds with Face ID or fingerprint",
         "No frozen accounts, no hidden fees",
-        "Your money stays in your wallet until you pay"
+        "Your money stays in your wallet until you spend it"
       ],
       "cta": "Create my account"
-    },
-    "charge": {
-      "tag": "For businesses",
-      "title": "Get paid with Toshi",
-      "body": "Accept payments without the paperwork of a traditional gateway. No manual approvals, no long contracts, lower fees.",
-      "points": [
-        "Start charging in under 30 seconds",
-        "Funds land straight in your wallet",
-        "No subscriptions, no gatekeepers, no holdbacks"
-      ],
-      "cta": "Start charging"
     }
   },
   "network": {
     "eyebrow": "One payments network",
     "title": "Both sides, connected.",
-    "subtitle": "No middlemen sitting between you and your money. The payment goes straight from the person to the business.",
+    "subtitle": "No middleman sitting between you and your income. The payment goes straight from your client to you.",
     "steps": [
       {
-        "label": "Person",
+        "label": "Your client",
         "title": "Pays in one tap",
         "body": "Confirms with a passkey — the same flow as Apple Pay."
       },
       {
         "label": "Toshi",
         "title": "Routes it openly",
-        "body": "Toshi coordinates the payment without ever holding the money."
+        "body": "Toshi coordinates the payment without ever holding your money or deciding when you get paid."
       },
       {
-        "label": "Business",
-        "title": "Receives instantly",
-        "body": "Funds land directly in the business wallet, ready to use."
+        "label": "You",
+        "title": "Get paid instantly",
+        "body": "Funds land directly in your wallet, ready to use."
       }
     ],
-    "footnote": "No approvals. No custody. No one in the middle deciding."
+    "footnote": "No approvals. No custody. No one deciding when — or if — you get paid."
   },
   "howItWorks": {
     "eyebrow": "How it works",
@@ -172,90 +172,90 @@
   },
   "benefits": {
     "eyebrow": "Benefits",
-    "title": "Designed to feel in control from the very first payment.",
+    "title": "Built to cost less and pay you faster.",
     "items": [
       {
-        "title": "Non-custodial",
-        "body": "Money never goes through our hands. It moves straight from one wallet to another, no middlemen."
+        "title": "No subscription",
+        "body": "No annual developer fee, no gateway plan, no minimums. You only pay a low 0.9–1.5% fee when money actually moves."
       },
       {
-        "title": "No subscriptions",
-        "body": "You only pay a small fee when money moves. No annual fees, no minimums, no surprises."
+        "title": "Low, flat fee",
+        "body": "Just 0.9–1.5% per transaction — lower than Stripe, with no marketplace skimming 30% off your sale."
       },
       {
         "title": "No gatekeepers",
-        "body": "No one can pause your account, freeze your funds or decide if you qualify."
+        "body": "No one can pause your account, freeze your funds or decide whether you qualify to get paid."
       },
       {
-        "title": "Familiar UX",
-        "body": "Pay and get paid with the same fluidity as Apple Pay or Google Pay."
+        "title": "Instant payouts",
+        "body": "Funds land in your wallet the moment you're paid — no multi-day settlement, no opaque holdbacks."
       },
       {
-        "title": "Global from day one",
-        "body": "Send or receive between Madrid, Buenos Aires or Tokyo with the exact same flow."
+        "title": "Clients anywhere",
+        "body": "Get paid from Madrid, Buenos Aires or Tokyo with the exact same flow."
       },
       {
-        "title": "Open by default",
-        "body": "Open APIs, public SDKs and verifiable standards. No lock-in."
+        "title": "Drop-in checkout",
+        "body": "Payment links, QR or open SDK — add Toshi to your site or invoice in minutes."
       }
     ]
   },
   "forWhom": {
     "eyebrow": "Who it's for",
-    "title": "For everyone who pays. For everyone who gets paid.",
+    "title": "Built for people who run their own thing.",
     "imageLabel": "Madera Studio",
-    "imageCaption": "From local storefront to global checkout.",
+    "imageCaption": "From a one-person studio to a growing small business.",
     "caseCta": "View use case",
     "items": [
       {
-        "tag": "People",
-        "title": "For everyday payments",
-        "body": "Top up once and pay anywhere Toshi is accepted — no frozen accounts, no surprise fees."
+        "tag": "Freelancers",
+        "title": "For client work",
+        "body": "Send an invoice link, get paid, see it in your wallet in seconds — no platform skimming 30%."
       },
       {
-        "tag": "Merchants",
-        "title": "For physical and online stores",
-        "body": "Accept payments at the counter or in checkout — without six-month contracts."
+        "tag": "Creators",
+        "title": "For your audience",
+        "body": "Sell directly to your followers without an app store or marketplace taking a cut of every sale."
       },
       {
-        "tag": "Freelancers & creators",
-        "title": "For independent income",
-        "body": "Send a link, get paid, see it in your wallet in seconds — without a platform skimming 30 %."
+        "tag": "Small businesses",
+        "title": "For your shop",
+        "body": "Accept payments at the counter or online — no six-month contracts, no monthly gateway fee."
       },
       {
-        "tag": "Apps",
-        "title": "For product teams",
-        "body": "Integrate payments through open APIs and a flow your team can adapt."
+        "tag": "Indie makers",
+        "title": "For your product",
+        "body": "Add payments with an open SDK — no pricey developer subscription just to charge customers."
       }
     ]
   },
   "security": {
     "eyebrow": "Security",
-    "title": "Sovereignty without giving up simplicity.",
-    "body": "Toshi relies on native device passkeys and non-custodial wallets. No seed phrases to lose, no servers of ours to compromise.",
+    "title": "Serious security, zero setup.",
+    "body": "Toshi protects every payment with the passkeys already built into your phone — the same Face ID or fingerprint you use to unlock it. Nothing to install, nothing for us to leak.",
     "items": [
       {
         "title": "Native passkeys",
-        "body": "Use Face ID, Touch ID or Windows Hello. The key never leaves the device."
+        "body": "Approve payments with Face ID, Touch ID or Windows Hello. The key never leaves your device."
       },
       {
-        "title": "Local signatures",
-        "body": "Every transaction is signed on the user's hardware. We never see the key."
+        "title": "Approved on your device",
+        "body": "Every payment is confirmed on your own hardware. Your credentials never touch our servers."
       },
       {
-        "title": "Non-custodial",
-        "body": "Money stays in your wallet. If Toshi disappears, your funds are still yours."
+        "title": "Money only you control",
+        "body": "Your funds go straight to you and stay yours — never pooled in an account we could freeze or lose."
       },
       {
-        "title": "Auditable and open",
-        "body": "Everything that matters happens on-chain or via public standards. Verify, don't trust."
+        "title": "Nothing to steal",
+        "body": "We don't store a pot of your cash or sensitive details, so there's no honeypot for attackers to target."
       }
     ]
   },
   "finalCta": {
     "eyebrow": "Start today",
-    "title": "Pay and get paid. Without asking permission.",
-    "body": "Join the waitlist and be one of the first on the Toshi network.",
+    "title": "Get paid the second you charge.",
+    "body": "Join the waitlist and be one of the first freelancers and small businesses on the Toshi network.",
     "payTab": "I want to pay",
     "chargeTab": "I want to get paid",
     "ctaPrimary": "Join the waitlist",
@@ -264,7 +264,7 @@
     "submit": "Reserve my access"
   },
   "footer": {
-    "tagline": "Modern payments. No permission needed.",
+    "tagline": "Get paid the second you charge.",
     "product": "Product",
     "company": "Company",
     "resources": "Resources",

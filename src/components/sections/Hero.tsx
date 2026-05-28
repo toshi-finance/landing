@@ -13,6 +13,7 @@ export function Hero() {
   const contentRef = useRef<HTMLDivElement>(null);
   const bridgeRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
+  const centerSlotRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
@@ -52,17 +53,29 @@ export function Hero() {
             "-=0.55",
           );
 
-          if (imgRef.current) {
-            gsap.set(imgRef.current, {
-              borderRadius: 0,
-              clipPath: "inset(0% 0% 0% 0% round 0px)",
-              transformOrigin: "50% 45%",
-            });
-          }
-          if (isDesktop && contentRef.current && bridgeRef.current && imgRef.current && cardsRef.current) {
+          if (
+            isDesktop &&
+            contentRef.current &&
+            bridgeRef.current &&
+            imgRef.current &&
+            cardsRef.current &&
+            centerSlotRef.current
+          ) {
+            const img = imgRef.current;
+            const cards = cardsRef.current;
+            const slot = centerSlotRef.current;
+            const container = img.parentElement as HTMLElement;
+
+            const fullW = () => container.offsetWidth;
+            const fullH = () => container.offsetHeight;
+            const slotLeft = () => cards.offsetLeft + slot.offsetLeft;
+            const slotTop = () => cards.offsetTop + slot.offsetTop;
+            const slotW = () => slot.offsetWidth;
+            const slotH = () => slot.offsetHeight;
+
             gsap.set(bridgeRef.current, { yPercent: 70, autoAlpha: 0 });
-            gsap.set(cardsRef.current, { autoAlpha: 0, y: isDesktop ? 90 : 46, scale: isDesktop ? 0.94 : 1 });
-            gsap.set("[data-hero-card]", { autoAlpha: 0, y: isDesktop ? 80 : 34, scale: isDesktop ? 0.82 : 0.96, xPercent: 0, rotation: 0 });
+            gsap.set(cards, { autoAlpha: 0 });
+            gsap.set("[data-hero-card]", { autoAlpha: 0, y: 80, scale: 0.82 });
             gsap.set("[data-hero-card='left']", { xPercent: 55, rotation: -3 });
             gsap.set("[data-hero-card='right']", { xPercent: -55, rotation: 3 });
 
@@ -72,44 +85,53 @@ export function Hero() {
                 start: "top top",
                 end: "+=78%",
                 scrub: 0.75,
+                invalidateOnRefresh: true,
               },
             });
 
             transition
               .to(contentRef.current, {
-                y: isDesktop ? -150 : -72,
-                scale: isDesktop ? 0.9 : 0.96,
+                y: -150,
+                scale: 0.9,
                 autoAlpha: 0,
                 ease: "none",
               }, 0)
-              .to(imgRef.current, {
-                scale: isDesktop ? 0.42 : 0.72,
-                yPercent: isDesktop ? -18 : -21,
-                clipPath: isDesktop
-                  ? "inset(6% 34% 8% 34% round 34px)"
-                  : "inset(8% 16% 40% 16% round 24px)",
-                ease: "none",
-              }, 0)
-              .to(bridgeRef.current, {
-                yPercent: 0,
-                autoAlpha: 1,
-                ease: "none",
-              }, 0.06)
-              .to(cardsRef.current, {
-                autoAlpha: 1,
-                y: 0,
-                scale: 1,
-                ease: "none",
-              }, 0.14)
-              .to("[data-hero-card]", {
-                autoAlpha: 1,
-                y: 0,
-                scale: 1,
-                xPercent: 0,
-                rotation: 0,
-                stagger: 0.04,
-                ease: "none",
-              }, 0.18);
+              .fromTo(
+                img,
+                {
+                  top: 0,
+                  left: 0,
+                  right: "auto",
+                  bottom: "auto",
+                  width: fullW,
+                  height: fullH,
+                  borderRadius: 0,
+                },
+                {
+                  top: slotTop,
+                  left: slotLeft,
+                  width: slotW,
+                  height: slotH,
+                  borderRadius: 26,
+                  ease: "none",
+                },
+                0,
+              )
+              .to(bridgeRef.current, { yPercent: 0, autoAlpha: 1, ease: "none" }, 0.06)
+              .to(cards, { autoAlpha: 1, ease: "none" }, 0.2)
+              .to(
+                "[data-hero-card]",
+                {
+                  autoAlpha: 1,
+                  y: 0,
+                  scale: 1,
+                  xPercent: 0,
+                  rotation: 0,
+                  stagger: 0.04,
+                  ease: "none",
+                },
+                0.24,
+              );
           }
         },
       );
@@ -129,7 +151,7 @@ export function Hero() {
         <div
           ref={imgRef}
           data-hero-image
-          className="absolute inset-0 z-0 will-change-transform"
+          className="absolute inset-0 z-[2] overflow-hidden shadow-[0_32px_80px_-42px_rgba(0,0,0,0.7)] will-change-[width,height,top,left]"
         >
           <Image
             src="/images/hero-cinematic.png"
@@ -160,7 +182,7 @@ export function Hero() {
           className="container-screen relative z-10 flex min-h-[calc(100svh-72px)] flex-col items-center justify-center pb-12 pt-20 text-center will-change-transform sm:pt-24 md:pb-16"
         >
           <h1
-            className="mx-auto max-w-[12ch] font-display text-[3.1rem] font-semibold leading-[0.92] tracking-normal text-foreground sm:text-[4.4rem] md:max-w-[13ch] md:text-[5.8rem] lg:text-[6.9rem]"
+            className="mx-auto max-w-[18ch] font-display text-[2.5rem] font-semibold leading-[0.98] tracking-tight text-foreground sm:text-[3.4rem] md:max-w-[20ch] md:text-[4.2rem] lg:text-[5rem]"
           >
             <span
               data-hero-line
@@ -183,7 +205,7 @@ export function Hero() {
             {t("subhead")}
           </p>
           <div className="mt-7 flex w-full max-w-sm flex-col items-stretch justify-center gap-3 sm:max-w-none sm:flex-row sm:items-center">
-            <a href="#pay" data-hero-cta>
+            <a href="#charge" data-hero-cta>
               <Button size="lg" className="w-full sm:w-auto">
                 {t("ctaPrimary")}
                 <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
@@ -192,7 +214,7 @@ export function Hero() {
                 </svg>
               </Button>
             </a>
-            <a href="#charge" data-hero-cta>
+            <a href="#pay" data-hero-cta>
               <Button variant="outline" size="lg" className="w-full border-white/25 text-white hover:border-white/50 hover:bg-white/[0.06] sm:w-auto">
                 {t("ctaCharge")}
               </Button>
@@ -225,17 +247,27 @@ export function Hero() {
               footnote={t("transitionLink")}
               side="left"
             />
-            <HeroCard
-              image="/images/hero-portrait.png"
-              title={t("stat2Label")}
-              value={`$${t("mockupAmount")}`}
-              footnote={t("mockupConfirm")}
-              side="center"
-            />
+            <div
+              ref={centerSlotRef}
+              className="relative min-h-[150px] overflow-hidden rounded-[1.25rem] md:min-h-[320px] md:rounded-[1.6rem]"
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/72 via-black/20 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-4 text-center text-white md:p-5">
+                <p className="text-[11px] font-medium text-white/72 md:text-[12px]">
+                  {t("stat2Label")}
+                </p>
+                <p className="mt-1 font-display text-3xl font-semibold leading-none md:text-4xl">
+                  {`$${t("mockupAmount")}`}
+                </p>
+                <span className="mt-3 inline-flex rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-neutral-950 md:mt-4 md:px-4 md:py-2 md:text-sm">
+                  {t("mockupConfirm")}
+                </span>
+              </div>
+            </div>
             <HeroCard
               tone="dark"
               image="/images/merchant-shop.png"
-              title={t("badgeNonCustodial")}
+              title={t("stat3Label")}
               value={t("stat3Value")}
               footnote={t("transitionCheckout")}
               side="right"

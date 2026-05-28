@@ -10,7 +10,7 @@ export function FinalCta() {
   const ref = useRef<HTMLElement>(null);
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const [intent, setIntent] = useState<"pay" | "charge">("pay");
+  const [intent, setIntent] = useState<"pay" | "charge">("charge");
 
   useGSAP(
     () => {
@@ -94,7 +94,7 @@ export function FinalCta() {
           data-final-cta
           className="mx-auto mt-10 inline-flex items-center gap-1 rounded-full border border-foreground/15 bg-foreground/[0.04] p-1 text-sm"
         >
-          {(["pay", "charge"] as const).map((key) => (
+          {(["charge", "pay"] as const).map((key) => (
             <button
               key={key}
               type="button"

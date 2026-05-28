@@ -9,8 +9,8 @@ import { cn } from "@/lib/cn";
 import { gsap, useGSAP } from "@/lib/gsap";
 
 const navItems = [
-  { id: "pay", href: "#pay" },
   { id: "charge", href: "#charge" },
+  { id: "pay", href: "#pay" },
   { id: "howItWorks", href: "#how-it-works" },
   { id: "security", href: "#security" },
 ] as const;
